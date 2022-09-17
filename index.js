@@ -8,6 +8,6 @@ async function getDataJson()
     return json;
   }catch (error)
   {
-    console.log('Ta dando erro oh: ', error);
+    console.log('ERRO, PARA TUDO E VEM RESOLVER!!!!: ', error);
   }
 }
