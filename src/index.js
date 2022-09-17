@@ -1,9 +1,5 @@
 import {promises as fs} from 'fs';
 
-function print(variable){
-  console.log(variable);
-}
-
 async function getDataJson()
 {
   try {
@@ -20,7 +16,6 @@ async function getAllStates()
 
   const dataFormat = cleanJson.map((estado) => {
     return {
-      Sigla: estado.sigla,
       Estado: estado.nome
     }
   });
@@ -28,4 +23,18 @@ async function getAllStates()
   return dataFormat;
 }
 
-console.log(await getAllStates());
+async function statesFind(find){
+  const cleanJson = await getDataJson();
+
+  const findResult = cleanJson.forEach((estado) => {
+    if(estado.nome.startsWith(find) == true)
+    {
+      console.log(estado);
+    }  
+  });
+  
+  return findResult;
+}
+
+// console.log(await getAllStates()); 
+console.log(await statesFind("A"));
