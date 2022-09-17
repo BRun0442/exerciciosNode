@@ -1,5 +1,6 @@
 import {promises as fs} from 'fs';
 
+//Le o json e manda para variavel data
 async function getDataJson()
 {
   try {
@@ -10,6 +11,7 @@ async function getDataJson()
   }
 }
 
+//Retorna todos os estados do json
 async function getAllStates()
 {
   const cleanJson = await getDataJson();
@@ -23,7 +25,9 @@ async function getAllStates()
   return dataFormat;
 }
 
-async function statesFind(find){
+//Procura estados iniciados com o parametro passado, no caso, com a letra "A"
+async function statesFind(find)
+{
   const cleanJson = await getDataJson();
 
   const findResult = cleanJson.forEach((estado) => {
@@ -34,6 +38,13 @@ async function statesFind(find){
   });
   
   return findResult;
+}
+
+
+//Organiza os estados de modo crescente de acordo com a quantidade de letras de seus nomes
+async function crescentLetter()
+{
+  
 }
 
 // console.log(await getAllStates()); 
