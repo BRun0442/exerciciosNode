@@ -1,0 +1,9 @@
+{
+  "name": "exerciciosNode-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://BRun0442: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@github.com/BRun0442/exerciciosNode.git",
+  "author": "'BRun0442' <'brunoosmar442@gmail.com'>",
+  "license": "MIT",
+  "type": "module"
+}

@@ -1,13 +1,27 @@
-import {promise as fs} from 'fs';
+import {promises as fs} from 'fs';
 
 async function getDataJson()
 {
-  try
-  {
-    const json = JSON.parse(await fs.readFile('./src/estados-cidades-atividade.json'));
-    return json;
-  }catch (error)
-  {
-    console.log('ERRO!!!!: ', error);
+  try {
+    const data = JSON.parse(await fs.readFile('./estados-cidades.json'));
+    return data;
+  } catch(error) {
+    console.log('Arruma o erro aqui chefia: ', error);
   }
 }
+
+async function getAllStates()
+{
+  const cleanJson = await getDataJson();
+
+  const newData = cleanJson.map((estado) => {
+    return {
+      siglaEstado: estado.sigla,
+      nomeEstado: estado.nome
+    }
+  });
+
+  console.log(newData());
+}
+
+getAllStates();
