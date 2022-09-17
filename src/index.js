@@ -29,23 +29,33 @@ async function getAllStates()
 async function statesFind(find)
 {
   const cleanJson = await getDataJson();
+  const findedItems = [];
 
   const findResult = cleanJson.forEach((estado) => {
     if(estado.nome.startsWith(find) == true)
     {
-      console.log(estado);
+      findedItems.push(estado);
     }  
   });
-  
-  return findResult;
+
+  return findedItems;
 }
 
 
 //Organiza os estados de modo crescente de acordo com a quantidade de letras de seus nomes
 async function crescentLetter()
 {
-  
+  const cleanJson = await getDataJson();
+  const statesLettersQuant = [];
+  cleanJson.forEach((estado) => {
+    statesLettersQuant.push((estado.name.toString()).length);
+  })
+
+  console.log(cleanJson);
 }
 
 // console.log(await getAllStates()); 
-console.log(await statesFind("A"));
+// console.log(await statesFind("A"));
+
+// crescentLetter();
+console.log(await statesFind('A'));
