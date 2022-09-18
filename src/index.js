@@ -70,7 +70,21 @@ async function findStateByName(name){
   return findItem.cidades;
 }
 
+
+async function findCitiesByLetterQuant(name, quantity)
+{
+  const data = await getDataJson();
+  
+  const findState = data.find((state) => {
+    return state.nome == name;
+  });
+
+  return findState.cidades.filter((city) => {
+    return city.length > quantity;
+  });
+}
 //console.log(await getAllStates()); 
 //console.log(await findStateByLetter("A"));
 //console.log(await crescentLetter());
-console.log(await findStateByName("São Paulo"));
+//console.log(await findStateByName("São Paulo"));
+console.log(await findCitiesByLetterQuant("Maranhão", 6));
