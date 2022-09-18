@@ -5,7 +5,6 @@
 Foi proposto durante aula uma série de exercícios para melhorar a experiência com arquivos JSON
 
 ## O que é JSON? 🤔🤨🤪
-<br>
 Em primeiro lugar, json siginifica JavaScript Object Notation, isso é, Notação de Objeto JavaScript. É utilizado para estruturar dados em formato de texto, e o motivo de ser bastante utilizado é pela sua facilidade de intercâmbio de dados. 
 O json se apresenta em formato de array de objetos, onde seu conteúdo interno é formatado em chaves, isto é, um item logo em seguida seu valor, por exemplo: "Nome" : "Osmar"
 
