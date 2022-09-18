@@ -58,6 +58,8 @@ async function crescentLetter()
   return cleanedJson;
 }
 
+
+//Função que pesquisa o nome de um estado através de um parametro, e retorna suas cidades
 async function findStateByName(name){
   const data = await getDataJson();
 
@@ -65,9 +67,10 @@ async function findStateByName(name){
     return state.nome == name;
   });
 
-  return findItem;
+  return findItem.cidades;
 }
 
-// console.log(await getAllStates()); 
-// console.log(await findStateByLetter("A"));
+//console.log(await getAllStates()); 
+//console.log(await findStateByLetter("A"));
 //console.log(await crescentLetter());
+console.log(await findStateByName("São Paulo"));
