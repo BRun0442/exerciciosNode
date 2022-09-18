@@ -14,11 +14,11 @@ async function getDataJson()
 //Retorna todos os estados do json
 async function getAllStates()
 {
-  const cleanJson = await getDataJson();
+  const data = await getDataJson();
 
-  const dataFormat = cleanJson.map((estado) => {
+  const dataFormat = data.map((state) => {
     return {
-      Estado: estado.nome
+      Estado: state.nome
     }
   });
   
@@ -26,13 +26,13 @@ async function getAllStates()
 }
 
 //Procura estados iniciados com o parametro passado, no caso, com a letra "A"
-async function statesFind(find)
+async function findStateByLetter(find)
 {
-  const cleanJson = await getDataJson();
+  const data = await getDataJson();
   const findedItems = [];
 
-  const findResult = cleanJson.forEach((estado) => {
-    if(estado.nome.startsWith(find) == true)
+  const findResult = data.forEach((state) => {
+    if(state.nome.startsWith(find) == true)
     {
       findedItems.push(estado);
     }  
@@ -45,17 +45,29 @@ async function statesFind(find)
 //Organiza os estados de modo crescente de acordo com a quantidade de letras de seus nomes
 async function crescentLetter()
 {
-  const cleanJson = await getDataJson();
-  const statesLettersQuant = [];
-  cleanJson.forEach((estado) => {
-    statesLettersQuant.push((estado.name.toString()).length);
-  })
+  const data = await getDataJson();
 
-  console.log(cleanJson);
+  const ordenedArray = data.sort((state1, state2) => {
+    return state1.nome.length - state2.nome.length;
+  });
+
+  const cleanedJson = ordenedArray.map((state) => {
+    return state.nome;
+  });
+
+  return cleanedJson;
+}
+
+async function findStateByName(name){
+  const data = await getDataJson();
+
+  const findItem = data.find((state) => {
+    return state.nome == name;
+  });
+
+  return findItem;
 }
 
 // console.log(await getAllStates()); 
-// console.log(await statesFind("A"));
-
-// crescentLetter();
-console.log(await statesFind('A'));
+// console.log(await findStateByLetter("A"));
+//console.log(await crescentLetter());
