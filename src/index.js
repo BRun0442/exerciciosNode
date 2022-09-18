@@ -117,5 +117,5 @@ async function findCitiesByLetterQuantMinor(name, quantity)
 //console.log(await crescentLetter());
 //console.log(await findStateByName("São Paulo"));
 //console.log(await findCitiesByAboveLetterQuant("Maranhão", 6));
-console.log(await getStatesCitiesCount());
+//console.log(await getStatesCitiesCount());
 //console.log(await findCitiesByLetterQuantMinor("Bahia", 5)); 
