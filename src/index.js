@@ -83,8 +83,23 @@ async function findCitiesByLetterQuant(name, quantity)
     return city.length > quantity;
   });
 }
+
+async function getStatesCitiesCount()
+{
+  const data = await getDataJson();
+
+  const dataFormat = data.map((state) => {
+    return {
+      Estado: state.nome,
+      QuantidadeDeCidades: state.cidades.length
+    }
+  });
+  
+  return dataFormat;
+}
 //console.log(await getAllStates()); 
 //console.log(await findStateByLetter("A"));
 //console.log(await crescentLetter());
 //console.log(await findStateByName("São Paulo"));
-console.log(await findCitiesByLetterQuant("Maranhão", 6));
+//console.log(await findCitiesByLetterQuant("Maranhão", 6));
+console.log(await getStatesCitiesCount()); 
