@@ -2,6 +2,9 @@
 
 ![](/src/nodeJs.jpg)
 
+
+## Exercícios
+<br>
 <ol>
     <li>
         Criar uma função que irá realizar a leitura do arquivo JSON para receber as informações
