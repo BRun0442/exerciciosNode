@@ -3,7 +3,7 @@
 ![](/src/nodeJs.jpg)
 
 
-## Exercícios
+## Exercícios ✏️📐📌
 <br>
 <ol>
     <li>
