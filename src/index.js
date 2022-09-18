@@ -70,7 +70,7 @@ async function findStateByName(name){
   return findItem.cidades;
 }
 
-
+//Procura por estados, depois por cidades que a quantidade de letras seja maior que o parametro
 async function findCitiesByLetterQuantMajor(name, quantity)
 {
   const data = await getDataJson();
@@ -84,6 +84,7 @@ async function findCitiesByLetterQuantMajor(name, quantity)
   });
 }
 
+//Retorna a quantidade de cidades de cada estado
 async function getStatesCitiesCount()
 {
   const data = await getDataJson();
@@ -98,6 +99,7 @@ async function getStatesCitiesCount()
   return dataFormat;
 }
 
+//Procura por estados, depois por cidades que a quantidade de letras seja menor que o parametro
 async function findCitiesByLetterQuantMinor(name, quantity)
 {
   const data = await getDataJson();
