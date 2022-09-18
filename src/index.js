@@ -71,7 +71,7 @@ async function findStateByName(name){
 }
 
 
-async function findCitiesByLetterQuant(name, quantity)
+async function findCitiesByLetterQuantMajor(name, quantity)
 {
   const data = await getDataJson();
   
@@ -94,12 +94,28 @@ async function getStatesCitiesCount()
       QuantidadeDeCidades: state.cidades.length
     }
   });
-  
+
   return dataFormat;
 }
+
+async function findCitiesByLetterQuantMinor(name, quantity)
+{
+  const data = await getDataJson();
+  
+  const findState = data.find((state) => {
+    return state.nome == name;
+  });
+
+  return findState.cidades.filter((city) => {
+    return city.length < quantity;
+  });
+}
+
+//console.log(await getDataJson());
 //console.log(await getAllStates()); 
 //console.log(await findStateByLetter("A"));
 //console.log(await crescentLetter());
 //console.log(await findStateByName("São Paulo"));
-//console.log(await findCitiesByLetterQuant("Maranhão", 6));
-console.log(await getStatesCitiesCount()); 
+//console.log(await findCitiesByAboveLetterQuant("Maranhão", 6));
+console.log(await getStatesCitiesCount());
+//console.log(await findCitiesByLetterQuantMinor("Bahia", 5)); 
